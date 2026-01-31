@@ -1,0 +1,2 @@
+/Users/home/StudioProjects/gg/build/.cxx/debug/1c156228/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/home/StudioProjects/gg/build/.cxx/debug/1c156228/armeabi-v7a/CMakeFiles/rebuild_cache.dir

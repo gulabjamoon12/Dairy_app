@@ -1,0 +1,37 @@
+{
+  "project_info": {
+    "project_number": "1085930714084",
+    "project_id": "milkapp-485908",
+    "storage_bucket": "milkapp-485908.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085930714084:android:484495cee7ae14e1510df1",
+        "android_client_info": {
+          "package_name": "com.example.gg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKC8Fn4RkWy6rNy5MGROG9NTeb4zOeZcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085930714084-utjquhdinp2b6obvq9cjoissrt276e4s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nikhil.gg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
