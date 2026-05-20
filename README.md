@@ -29,19 +29,6 @@ A complete, feature-rich offline-first Flutter application designed to help dair
 * **Google Drive Backup & Restore**: Secure cloud replication routines that backup local SQLite files via standard Google OAuth flows.
 * **File Exporting**: Render reports instantly into portable document and table formats.
 
----
-
-## 📸 Screenshots
-
-*(Place your application screenshots inside an `assets/screenshots/` folder and replace the placeholders below).*
-
-| Main Dashboard | Daily Milk Entry | Customer Reports |
-| --- | --- | --- |
-|  |  |  |
-
-| Dahi & Ghee Management | Settings & Backup | SMS Alerts |
-| --- | --- | --- |
-|  |  |  |
 
 ---
 
