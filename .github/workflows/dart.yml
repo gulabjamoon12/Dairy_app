@@ -1,11 +1,47 @@
-name: iOS-ipa-build
+name: 🎉 Build & Release Mobile Apps
 
 on:
   workflow_dispatch:
 
 jobs:
+  # --- ANDROID BUILD JOB ---
+  build-android:
+    name: 🤖 Android APK Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Android Release APK
+        run: flutter build apk --release
+
+      - name: Upload APK to GitHub Release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/app/outputs/flutter-apk/app-release.apk
+          asset_name: DairyApp-Android-v1.0.apk
+          tag: v1.0
+          overwrite: true
+          body: "Official release containing both iOS (un-codesigned IPA) and Android production builds."
+
+  # --- IOS BUILD JOB ---
   build-ios:
-    name: 🎉 iOS Build
+    name: 🍏 iOS IPA Build
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,8 +50,8 @@ jobs:
         with:
           channel: 'stable'
           architecture: x64
+
       - run: flutter pub get
-      
 
       - run: pod repo update
         working-directory: ios
@@ -29,14 +65,15 @@ jobs:
         working-directory: build/ios/iphoneos
 
       - name: Zip output
-        run: zip -qq -r -9 FlutterIpaExport.ipa Payload
+        run: zip -qq -r -9 DairyApp-iOS-v1.0.ipa Payload
         working-directory: build/ios/iphoneos
 
-      - name: Upload binaries to release
+      - name: Upload IPA to GitHub Release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: build/ios/iphoneos/FlutterIpaExport.ipa
+          file: build/ios/iphoneos/DairyApp-iOS-v1.0.ipa
+          asset_name: DairyApp-iOS-v1.0.ipa
           tag: v1.0
           overwrite: true
-          body: "This is first release"
+          body: "Official release containing both iOS (un-codesigned IPA) and Android production builds."
