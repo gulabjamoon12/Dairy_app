@@ -1,0 +1,14 @@
+build/
+android/build/
+**/.DS_Store
+.DS_Store
+.idea/
+*.iml
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+google-services.json
+key.properties
+.env
+*.env
