@@ -131,12 +131,11 @@ To ensure smooth runtime operations, make sure the app has permissions enabled f
 * **Native SMS Send**: Used by the platform channels to trigger customer billing texts.
 
 ---
+
 ##Contact
 
 * **Developer:** Nikhil
-* **Email:** [nikiprk05@gmail.com]()
-
----
+* **Email:** [snbbnf4tz@mozmail.com]()
 
 ---
 
