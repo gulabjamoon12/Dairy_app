@@ -26,6 +26,24 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Create Dummy google-services.json
+        run: |
+          cat <<EOF > android/app/google-services.json
+          {
+            "project_info": { "project_number": "123456789", "project_id": "dummy-project" },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:123456789:android:abcdef",
+                  "android_client_info": { "package_name": "com.example.gg" }
+                },
+                "api_key": [{ "current_key": "dummy-key" }]
+              }
+            ],
+            "configuration_version": "1"
+          }
+          EOF
+
       - name: Build Android Release APK
         run: flutter build apk --release
 
