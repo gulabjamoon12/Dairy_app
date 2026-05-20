@@ -71,6 +71,10 @@ lib/
 
 ## 🚀 Installation & Setup
 
+* Just go to Releases
+
+or
+
 Get your local environment ready for testing or feature enhancement using the following checklist.
 
 ### Prerequisites
@@ -96,13 +100,7 @@ flutter pub get
 ```
 
 
-3. **Configure Google Cloud Identity Console (For Cloud Sync Features):**
-* Download your custom `google-services.json` setup file.
-* Place the file directly inside the `android/app/` subdirectory directory.
-* Ensure your OAuth app configuration on the GCP console includes access scopes for Google Drive AppData (`.../auth/drive.appdata`).
-
-
-4. **Launch Application:**
+3. **Launch Application:**
 ```bash
 flutter run
 
